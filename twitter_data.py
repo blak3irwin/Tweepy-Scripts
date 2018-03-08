@@ -6,10 +6,10 @@ import sys
 
 
 #define Twitter Keys and ACCESS_TOKEN_SECRET
-CONSUMER_KEY = 'ADD KEYS'
-CONSUMER_SECRET = 'ADD KEYS'
-ACCESS_TOKEN = 'ADD KEYS'
-ACCESS_TOKEN_SECRET = 'ADD KEYS'
+CONSUMER_KEY = 'ADD KEY'
+CONSUMER_SECRET = 'ADD SECRET'
+ACCESS_TOKEN = 'ADD TOKEN'
+ACCESS_TOKEN_SECRET = 'ADD SECRET'
 
 #session authentication
 def authenticate():
@@ -48,10 +48,16 @@ def friendslist(friends,api):
         user = api.get_user(i)
         print '@'+user.screen_name
 
+def followers1(followers,api):
+    print 'list of followers for '+followers
+    results = api.followers(followers)
+    for i in results:
+        #user = api.get_user(i)
+        print i.screen_name
 args = sys.argv[1:]
 
 if not args:
-    print 'usage: [--geocode 12.1234567,98.7654321 5km]'
+    print 'usage: [--geocode 12.1234567,98.7654321 5km or --friends <username> or --followers <username>]'
     sys.exit(1)
 geocode = ''
 dist = ''
@@ -67,6 +73,11 @@ if args:
         del args[0:2]
         api = authenticate()
         friendslist(friends,api)
+    elif args[0] == '--followers':
+        followers = args[1]
+        del args[0:2]
+        api = authenticate()
+        followers1(followers,api)
     else:
-        print 'usage: [--geocode 12.1234567,98.7654321 5km or --friends <username>]'
+        print 'usage: [--geocode 12.1234567,98.7654321 5km or --friends <username> or --followers <username>]'
         sys.exit(1)
