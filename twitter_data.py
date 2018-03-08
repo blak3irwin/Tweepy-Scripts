@@ -5,13 +5,11 @@ import sys
 #My plan is to expand this script and add additional scripts or combine into a more robust scripts.  
 
 
-tweepy.certfile="/root/Downloads/certnew2.cer"
-tweepy.cert_reqs='NONE'
 #define Twitter Keys and ACCESS_TOKEN_SECRET
-CONSUMER_KEY = 'tT57SvQtwUkDFpiAPrTrvDIk0'
-CONSUMER_SECRET = 'jYrO5gj6TJmueB1W9yCMtv4USGRhR1s6CBUBgYWDiIw4b9TxrV'
-ACCESS_TOKEN = '2224289669-8v6p9QHQju3TYmXuRJR18uu8hpQlQjoKvvyuBgA'
-ACCESS_TOKEN_SECRET = 'V3Iby0OFqRnJcTMLtd5QdqhgGLuKF3V4khJ5tlhfXjUQF'
+CONSUMER_KEY = 'ADD KEYS'
+CONSUMER_SECRET = 'ADD KEYS'
+ACCESS_TOKEN = 'ADD KEYS'
+ACCESS_TOKEN_SECRET = 'ADD KEYS'
 
 #session authentication
 def authenticate():
